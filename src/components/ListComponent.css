@@ -1,0 +1,17 @@
+.ListComponent_listContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ListComponent_messageContainer {
+    display: block;
+    margin: 20px;
+}
+
+.ListComponent_loadMoreButton {
+    margin: 8px;
+    height: 48px;
+}
+
