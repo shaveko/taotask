@@ -1,5 +1,5 @@
 import constants from '../util/const';
-import urlForFetch from '../util/urlForFetch';
+import axios from 'axios';
 
 /** Class to fetch user lists and users from Api
 */
@@ -15,15 +15,36 @@ export default class ApiUserDataProvider {
         limit = limit || constants.DEFAULT_LIMIT;
 
         let response;
+        
         try{
-            response = await fetch(urlForFetch(constants.USER_LIST_URL, offset, limit));
+            response = await axios.get(constants.USER_LIST_URL, {
+                params: {offset, limit}, 
+            })
+                    
+            return response.data;
+
         }catch(e) {
-            return Promise.reject(constants.NETWORK_ERROR_STATUS);
+            return Promise.reject(e);
         }
-        if(response.ok) {
-            return response.json();
-        }else{
-            return Promise.reject(response.status)
+
+    }
+
+    /**
+    * Loads user by id from api source
+    * @param {number} id - The offset of items page.
+    * @param {number} limit - The page size.
+    */
+    static async loadItem(id) {
+
+        let response;
+        
+        try{
+            response = await axios.get(constants.USER_URL + id)
+                
+            return response.data;
+
+        }catch(e) {
+            return Promise.reject(e);
         }
     }
 

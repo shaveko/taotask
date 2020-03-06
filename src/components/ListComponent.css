@@ -5,6 +5,39 @@
     align-items: center;
 }
 
+.ListComponent_listContainer header {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    }
+    
+
+.ListComponent_listContainer table{
+    width: 80%;
+    margin: 24px;
+}
+
+.ListComponent_listContainer td{
+    width: 48px;
+    padding: 16px;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.ListComponent_listContainer th{
+    background-color: #444444;
+    width: 48px;
+    padding: 16px;
+    }
+
+.ListComponent_listContainer tr{
+    border: 1px solid grey;
+}
+
 .ListComponent_messageContainer {
     display: block;
     margin: 20px;
@@ -13,5 +46,13 @@
 .ListComponent_loadMoreButton {
     margin: 8px;
     height: 48px;
+    font-size: larger;
+}
+
+.ListComponent_errorBox {
+    margin: 8px;
+    height: 48px;
+    font-size: larger;
+    color: red;
 }
 

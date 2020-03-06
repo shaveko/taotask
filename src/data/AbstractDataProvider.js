@@ -1,7 +1,7 @@
 /** Abstract class representing provider for items 
  * extend this to create providers
 */
-export default class AbstractItemProvider {
+export default class AbstractDataProvider {
 
     /**
     * Loads array of items - must be redeclared in a subclass
@@ -9,8 +9,9 @@ export default class AbstractItemProvider {
     * @param {number} limit - The page size.
     * @return {Promise} - Resolves to array of items or rejects with and error
     */
-    static loadItems(offset, limit) {
+    static async loadItems(offset, limit) {
         console.error('You must implement this method in subclass')
+        return null;
     }
 
     
@@ -19,7 +20,8 @@ export default class AbstractItemProvider {
     * @param {string} id - Item id.
     * @return {Promise} - Resolves to the item or rejects with and error
     */
-    static loadItem(id) {
-
+    static async loadItem(id) {
+        console.error('You must implement this method in subclass')
+        return null;
     }
 }
